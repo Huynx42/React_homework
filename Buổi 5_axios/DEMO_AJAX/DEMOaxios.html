@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Đầu tiên phải thêm thư viện axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Axios DEMO 02</title>
+</head>
+<body>
+    <script>
+        //?q=foot& có nghĩa là: ?....&, với .... là q=???, ??? đại diện cho danh từ hiển thị kết quả
+        let url = 'http://api.giphy.com/v1/gifs/search?q=foot&api_key=OaI8Scqh6gxKwYuB0TXRiZxeyTICIFcX';
+        axios.get(url)
+            .then((result) => {
+                console.log(result.data.data[0].url)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    </script>
+</body>
+</html>

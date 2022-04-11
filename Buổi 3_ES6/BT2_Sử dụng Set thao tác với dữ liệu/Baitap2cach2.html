@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const animals = [{
+                "ID": "DV8",
+                "Name": "Eurasian Collared-Dove",
+                "Type": "Dove"
+            },
+            {
+                "ID": "HK12",
+                "Name": "Bald Eagle",
+                "Type": "Hawk"
+            },
+            {
+                "ID": "HK6",
+                "Name": "Cooper's Hawk",
+                "Type": "Hawk"
+            },
+            {
+                "ID": "SP11",
+                "Name": "Bell's Sparrow",
+                "Type": "Sparrow"
+            },
+            {
+                "ID": "DV2",
+                "Name": "Mourning Dove",
+                "Type": "Dove"
+            }
+        ];
+        let zoo = new Set(animals); //Khởi tạo đối tượng
+        //Khai báo đối tượng về 1 loài chim
+        let chimp = {
+            "ID": "DV03",
+            "Name": "Chimp",
+            "Type": "Dove"
+        };
+        console.log(zoo); //zoo sai khi mới khởi tạo
+        // //Thêm vào zoo 1 đối tượng mới
+        let addAnimal = (animal) => {
+            zoo.add(animal);
+        }
+
+        // // addAnimal(chimp);
+        // //Kiểm tra xem đối tượng đã có trong zoo chưa
+        let isExist = (animal) => {
+            let checkExist = false;
+            zoo.forEach(zo => {
+                if (zo.ID == animal.ID && zo.Name == animal.Name && zo.Type == animal.Type) {
+                    checkExist = true;
+                }
+                //Cách 2: check nguyên ID
+            })
+            return checkExist;
+        }
+        console.log(isExist(chimp));
+
+        //Xóa một loại động vật trong zoo theo ID
+        let deleteAnimalByID = (animalID) => {
+            zoo.forEach(zo => {
+                if (zo.ID == animalID) {
+                    zoo.delete(zo);
+                }
+            })
+        };
+        deleteAnimalByID("SP11");
+        // //Thêm nếu chưa có trong zoo
+        // let addIfNotExist = (animal) => {
+        //     if (!isExist(animal)) {
+        //         addAnimal(animal);
+        //     }
+        // }
+        // addIfNotExist(chimp);
+        console.log(zoo);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const Peter = [
+        {"ID": "KV1", "Name": "Dove", "Type": "Elephant" },
+        {"ID": "KH1", "Name": "Monkey", "Type": "Monkey" },
+        {"ID": "CH1", "Name": "Cooper", "Type": "Dog" },
+        {"ID": "CH2", "Name": "Bell", "Type": "Dog" },
+        {"ID": "CH3", "Name": "Ball", "Type": "Dog" },
+        {"ID": "ME1", "Name": "Moon", "Type": "Cat" },
+        {"ID": "ME2", "Name": "Sun", "Type": "Cat" }
+        ];
+
+        const addEnimal = (newID,newName,newType) => {
+            Peter.push({
+                ID : newID,
+                Name : newName,
+                Type : newType
+            })
+        }
+        addEnimal("Chó","Zoom","Dog");
+
+        const checkNew = (newID,newName,newType) => {
+            let num = 0;
+            Peter.forEach(check => {
+                if (check.Type == newType) num += 1;
+            })
+            if (num == 0) return console.log("Loài vật mới chưa có trong danh sách");
+            console.log("Loài vật mới đã có trong danh sách");
+        }
+        checkNew("Chó","Zoom","Dog");
+
+        const showEnimal = () => {
+            let result = [];
+            Peter.map(animal => {
+                result.push({
+                    Type : animal.Type
+                })
+            })
+            console.log(result);
+        }
+        showEnimal();
+
+        const deleteEnimal = (delName) => {
+            const result = Peter.filter(checkDel);
+                function checkDel(animal) {
+                    return animal.Name == delName;
+                }
+            console.log(Peter);
+        }
+        deleteEnimal("Moon");
+
+        console.log(Peter);
+    </script>
+</body>
+</html>

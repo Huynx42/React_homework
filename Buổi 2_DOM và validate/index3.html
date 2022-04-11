@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkText(text) {
+            var regrex = /^[A-Z]/;
+            if (regrex.test(text)) {
+                console.log("String's first character is uppercase");
+            } else {
+                console.log("String's first character is not uppercase");
+            }
+        }
+        checkText('Abcd');
+        checkText('abcd');
+        checkText('Bbcd');
+        checkText('Nguyen van Nam');
+        checkText('NGUYEN VAN NAM');
+        checkText('nguyen van Nam');
+    </script>
+</body>
+</html>

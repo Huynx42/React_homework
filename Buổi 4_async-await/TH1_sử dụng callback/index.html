@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // B1
+        function greet(name, cb) {
+            console.log("Hi " + " " + name);
+            cb();
+        }
+
+        // B2
+        function callMe() {
+            console.log("I am cb function");
+        }
+
+        greet("Huy",callMe);
+
+        // Bài 2
+        let greet2 = () => {
+            console.log("Hello world");
+        }
+        let sayName = name => {
+            console.log("Hello " + " " + name);
+        }
+        // calling arrow function
+        setTimeout(greet2,2000);
+        sayName("Johny");
+
+        // Bài 3
+        let greet3 = (name,cb) => {
+            console.log("Hello world 3");
+            cb(name);
+        }
+        //cb function
+        let sayName3 = name => {
+            console.log("Hello " + " " + name);
+        }
+        setTimeout(greet3,5000,"Johnnny",sayName3);
+    </script>
+</body>
+</html>

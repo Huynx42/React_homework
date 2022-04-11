@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(_name) {
+                this.name = _name;
+            }
+            set setName(_setName) {
+                this.name = _setName;
+            }
+            get getName() {
+                return this.name;
+            }
+            walk(_walk) {
+                return _walk;
+            }   
+        };
+        class Programmer extends Person {
+            constructor(_name) {
+                super(_name);
+            }
+            set setName(_setName) {
+                this.name = _setName;
+            }
+            get getName() {
+                return this.name;
+            }
+            writeCode(_code) {
+                return _code;
+            }
+        };
+        let Pro1 = new Programmer("Huy");
+        console.log(Pro1.setName = "Xuân Huy");
+        console.log("Sử dụng getter " + Pro1.getName);
+        console.log(Pro1.writeCode("Tôi là coder"));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Tự làm bị sai
+        // class information {
+        //     contructors(_name,_about) {
+        //         this.name = _name;
+        //         this.about = _about;
+        //     }
+        //     calculator(x = 1) {
+        //         x *= 3;
+        //     }
+        // }
+        // class geometry extends information {
+        //     contructors(_name,_about) {
+        //         super(_name,_about);
+        //     }
+        // }
+        // var hh = new geometry('hinh tron','3');
+        // hh.calculator(3);
+        class Infor {
+            constructor(_name, _desc) {
+                this.name = _name;
+                this.desc = _desc;
+            }
+            static cal(number = 1) {
+                return number * 3;
+            }
+        }
+
+        class Shape extends Infor {
+            constructor(_name,_desc,_width){
+                super(_name, _desc);
+                this.width = _width;
+            }
+            static cal(number) {
+                return number;
+            }
+        }
+        console.log(Infor.cal(2));
+        console.log(Shape.cal(2));
+    </script>
+</body>
+</html>

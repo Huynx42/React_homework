@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Bài 1
+        const count = true;
+        let countValue = new Promise((res, rej) => {
+            if (count) {
+                res("There is a count value.");
+            } else {
+                rej("There is no count value");
+            }
+        })
+        console.log(countValue);
+        // Bài 2
+        let countValue2 = new Promise((res, rej) => {
+                res("Promise resolved")
+            })
+            .then(function successValue(result) {
+                console.log(result);
+            })
+            .then(function successValue1() {
+                console.log("You can call multiple functions this way.");
+            })
+        //Bài 3
+        let countValue3 = new Promise(function (resolve, reject) {
+            reject('Promise rejected');
+        });
+        //Gọi .then() và .catch()
+        countValue3.then(
+                function successValue(result) {
+                    console.log(result);
+                },
+            )
+
+            // executes if there is an error
+            .catch(
+                function errorValue(result) {
+                    console.log("KQ Bài 3 " + result);
+                }
+            );
+    </script>
+</body>
+
+</html>
