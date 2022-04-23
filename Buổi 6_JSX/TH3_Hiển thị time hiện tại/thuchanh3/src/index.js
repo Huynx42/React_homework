@@ -9,7 +9,7 @@ const tiktok = () => {
       <h1>Hello, world</h1>
       <h2>It is {new Date().toLocaleTimeString()}</h2>
     </div>
-  );  
+  );
   const container = document.getElementById('root');
   const root = createRoot(container);
   root.render(showTime);
