@@ -22,6 +22,7 @@ class AppTest extends Component {
         if (isLoggedIn)
             return(
                 //hỏi: tại sao ở đây sử dụng OnLogOuting, và cách thực hiện chương trình ntn
+                //OnLogOuting ở đây là truy xuất Thuộc tính props của Home dùng JSX
                 <Home onLogOuting={this.handleLogOut}/>
             )
         return (

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 
+//onLogOuting ở đây: là 1 thuộc tính JSX của props thuộc this=Home 
 class Home extends Component {
     render() {
         return (

@@ -7,6 +7,9 @@ export default class ChangeColor extends Component {
             color:"black"
         }
     }
+    shouldComponentUpdate() {
+        return true;
+    }
     componentDidMount() {
         setTimeout(() => {
             this.setState({color:"pink"});
